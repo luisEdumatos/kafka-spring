@@ -11,12 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/first/kafka")
 public class SimpleController {
-    private KafkaTemplate<String, FieldModel> kafkaTemplate;
 
     @Autowired
-    public SimpleController(KafkaTemplate<String, FieldModel> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
+    private KafkaTemplate<String, FieldModel> kafkaTemplate;
 
     @PostMapping
     public void post(@RequestBody FieldModel fieldModel) {
